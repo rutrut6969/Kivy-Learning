@@ -1,5 +1,7 @@
 WindowManager:
     MainWindow:
+        passwd:passwd
+        btn:btn
     SecondWindow:
 
 <MainWindow>:
@@ -16,12 +18,10 @@ WindowManager:
                 multiline:False
 
         Button:
+            id:btn
             text:"Submit"
             on_release:
-                app.root.current = "second"
-
-                
-        
+                app.root.current = "second" if passwd.text == "isaac" else "main"
 
 <SecondWindow>:
     name: "second"
