@@ -1,4 +1,9 @@
 #:kivy 1.11
+<Widgets>:
+    Button:
+        text: "Press Me"
+        on_release: root.btn()
+        pos_hint: {"x":0.5, "y":0.5}
 <P>:
     Label:
         text: "You Pressed the button"
@@ -8,4 +13,4 @@
     Button:
         text: "You Pressed the button"
         size_hint: 0.8,0.2
-        po_hint: {"x":0.1 "y":0.1}
+        pos_hint: {"x":0.1, "y":0.1}

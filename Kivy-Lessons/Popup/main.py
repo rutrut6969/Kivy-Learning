@@ -7,7 +7,8 @@ from kivy.uix.widget import Widget
 from kivy.uix.popup import Popup
 
 class Widgets(Widget):
-    pass
+    def btn(self):
+        show_popup()
 
 class P(FloatLayout):
     pass
@@ -22,7 +23,7 @@ def show_popup():
     #Another instance of P()
     show = P()
     #Creates the size of the popup window
-    popupwindow = Popup(title="popup Window", content=show, size_hint(None,None), size=(400,400))
+    popupwindow = Popup(title="popup Window",content=show,size_hint=(None,None),size=(400,400))
     #Shows the window-
     popupwindow.open()
 
