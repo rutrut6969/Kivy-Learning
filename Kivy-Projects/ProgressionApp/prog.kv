@@ -1,1 +1,65 @@
 #:kivy
+<CreateAcc>:
+    username:username
+    email:email
+    passw:passw
+    loginf:loginf
+    create:create
+    FloatLayout:
+        cols:1
+
+        FloatLayout:
+            TextInput:
+                id:username
+                placeholder:
+                    text: "Username:"
+
+            TextInput:
+                id:email
+                placeholder:
+                    text: "E-mail:"
+            
+            TextInput:
+                id:passw
+                placeholder:
+                    text: "Password:"
+
+            Button:
+                id:loginf
+                text:"Already Have an Account?"
+
+            Button:
+                id:create
+                text:"Create Account"
+            
+
+
+<Login>:
+email:email
+passw:passw
+createf:createf
+login:login
+    FloatLayout:
+        cols:1
+        FloatLayout:
+            TextInput:
+                id:email
+                placeholder:
+                    text: "Email:"
+            TextInput:
+                id:passw
+                placeholder:
+                    text:"Password:"
+
+            Button:
+                id:createf
+                text:"Don't have an Account?"
+            
+            Button:
+                id:login
+                text:"Login"
+
+
+
+
+<Profile>:
