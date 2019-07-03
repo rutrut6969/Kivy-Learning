@@ -1,0 +1,200 @@
+#:kivy 1.11
+
+#This window is to create an account, this is the styling of that window in general. 
+#As you progress it will be a good idea to play around with styling mechanics, and start doing some of this on your own. 
+<CreateAccountWindow>:
+    name: "create"
+
+    namee:namee
+    email:email
+    password:passw
+
+    FloatLayout:
+        cols:1
+
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                #Text contained in the object
+                text: "Create an Account"
+                #Sizes the object
+                size_hint: 0.8,0.2
+                #Positions it
+                pos_hint: {"x":0.1, "top":1}
+                #Determines the size of the font
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            Label:
+                size_hint: 0.5,0.12
+                pos_hint: {"x":0,"top":0.8}
+                text:"Name: "
+                #Determines the size of the font
+                font_size: (root.width**2 + root.height**20 ) / 14**4
+
+            TextInput:
+                pos_hint: {"x":0.5,"top":0.8}
+                size_hint: 0.4,0.12
+                id: namee
+                multiline:False
+                #Determines the size of the font
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            Label:
+                size_hint: 0.5,0.12
+                pos_hint: {"x":0,"top":0.8-0.13}
+                text:"E-mail: "
+                #Determines the size of the font
+                font_size: (root.width**2 + root.height**20 ) / 14**4
+
+            TextInput:
+                pos_hint: {"x":0.5,"top":0.8-0.13}
+                size_hint: 0.4,0.12
+                id: email
+                multiline:False
+                #Determines the size of the font
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+            Label:
+                size_hint: 0.5,0.12
+                pos_hint: {"x":0,"top":0.8-0.13*2}
+                text:"Password: "
+                #Determines the size of the font
+                font_size: (root.width**2 + root.height**20 ) / 14**4
+
+            TextInput:
+                pos_hint: {"x":0.5,"top":0.8-0.13*2}
+                size_hint: 0.4,0.12
+                id: passw
+                multiline:False
+                password:True
+                #Determines the size of the font
+                font_size: (root.width**2 + root.height**2) / 14**4
+
+        Button:
+            pos_hint:{"x":0.3,"y":0.25}
+            size_hint:0.4,0.1
+            #Determines the size of the font
+            font_size:(root.width**2 +root.height**2) / 17**4
+            text: "Already havee an Account? Log In"
+            on_release:
+                root.manager.transition.direction = "left"
+                root.login()
+        
+        Button:
+            pos_hint:{"x":0.2,"y":0.05}
+            size_hint:0.6,0.15
+            #Determines the size of the font
+            font_size:(root.width**2 +root.height**2) / 17**4
+            text: "Submit"
+            on_release:
+                root.manager.transition.direction = "left"
+                root.submit()
+
+#This window is to display the login form and allow the user to transition to the next screen
+<LoginWindow>:
+    name: "login"
+
+    email:email
+    password:password
+
+    FloatLayout:
+        Label:
+            text:"E-mail: "
+            #Determines the size of the font
+            font_size:(root.width**2 + root.height**2) / 13**4
+            pos_hint:{"x":0.1,"top":0.9}
+            size_hint:0.35,0.15
+
+        TextInput:
+            id: email
+            #Determines the size of the font
+            font_size:(root.width**2 + root.height**2) / 13**4
+            multiline:False
+            pos_hint:{"x":0.45,"top":0.9}
+            size_hint:0.4,0.15
+
+        Label:
+            text:"Password: "
+            #Determines the size of the font
+            font_size:(root.width**2 + root.height**2) / 13**4
+            pos_hint:{"x":0.1,"top":0.7}
+            size_hint:0.35,0.15
+#Puts in user password
+        TextInput:
+            id: password
+            #Determines the size of the font
+            font_size:(root.width**2 + root.height**2) / 13**4
+            multiline:False
+            password:True
+            pos_hint:{"x":0.45,"top":0.7}
+            size_hint:0.4,0.15
+#Allows the user to login using their pre-made credentials
+        Button:
+            pos_hint:{"x":0.2,"y":0.05}
+            size_hint:0.6,0.2
+            #Determines the size of the font
+            font_size:(root.width**2 +root.height**2) / 13**4
+            text: "Login"
+            on_release:
+                root.manager.transition.direction = "up"
+                root.loginBtn()
+#Create Account Button, Pulls up the createwindow
+        Button:
+            pos_hint:{"x":0.3,"y":0.3}
+            size_hint:0.4,0.1
+            #Determines the size of the font
+            font_size:(root.width**2 +root.height**2) / 13**4
+            text: "Don't have an Account? Create One"
+            on_release:
+                root.manager.transition.direction = "right"
+                root.createBtn()
+        
+        
+        
+
+
+#This window is the main window to display user information, 
+#and later I will add a suggestion textbox for users to send suggestions 
+#on what I should add to the app. 
+<MainWindow>:
+    n:n
+    email:email
+    created:created
+
+    FloatLayout:
+        #Displays Name
+        Label:
+            id:n
+            pos_hint:{"x":0.1,"top":0.9}
+            size_hint:0.8,0.2
+            text:"Account Name: "
+        #Displays E-mail
+        Label:
+            id:email
+            pos_hint:{"x":0.1,"top":0.7}
+            size_hint:0.8,0.2
+            text:"E-mail: "
+        #Displays Date and time Created
+        Label:
+            id:created
+            pos_hint:{"x":0.1,"top":0.5}
+            size_hint:0.8,0.2
+            text:"Created: "
+        #Logs User Out
+        Button:
+            pos_hint:{"x":0.2,"y":0.1}
+            size_hint:0.6,0.2
+            text:"Log Out"
+            on_release:
+                app.root.current = "login"
+                root.manager.transition.direction = "down"
+
+        
+
+
+
+
+
+        
+            
