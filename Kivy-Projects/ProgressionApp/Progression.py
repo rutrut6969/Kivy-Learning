@@ -18,10 +18,22 @@ class Login(Screen):
     passw = ObjectProperty(None)
     createf = ObjectProperty(None)
     login = ObjectProperty(None)
-    
+
     pass
 
 class Profile(Screen):
     pass
 
+
+class WindowManager(ScreenManager):
+    pass
+
 kv = Builder.load_file("prog.kv")
+
+class ProgressionApp(App):
+    def build(self):
+        return kv
+
+
+if __name__ == "__main__":
+    ProgressionApp().run()
