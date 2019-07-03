@@ -1,0 +1,49 @@
+Outline:
+	Login Form:
+		Username/Email
+		Password
+
+	Create Acc. Form
+		Username
+		E-mail
+		Password
+	Database to collect User Account Information
+	Keep user info in separate folders per user
+	Saved to a server connected from the database
+
+	Basic Profile:
+		Profile Pic
+		Bio Tab
+		Friends List
+		Settings Page
+		Log Out Btn
+		Blog/Posts
+		News Feed
+			Able to collect information and show if on feed from friends
+	
+	Notes App:
+		Create/Delete Notes
+		Todo list functions
+
+	Access All the tabs from side scroller:
+		Profile:
+			Friends
+			Messages:
+				Sent
+				Recieved
+				New
+				Spam
+			Settings:
+				Log Out
+				Delete Account
+				Blocking
+				
+			Notes:
+				Create New
+				View List
+				ToDo Lists:
+					Create New
+					View
+	
+
+	
