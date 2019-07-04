@@ -24,6 +24,7 @@ Outline:
 	Notes App:
 		Create/Delete Notes
 		Todo list functions
+		Suggestions to append to application
 
 	Access All the tabs from side scroller:
 		Profile:

@@ -4,7 +4,9 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.screenmanager import Screen, ScreenManager
 from kivy.lang import Builder
 from kivy.properties import ObjectProperty
+from database import DataBase
 
+#Where the user creates their account. 
 class CreateAcc(Screen):
     username = ObjectProperty(None)
     email = ObjectProperty(None)
@@ -14,6 +16,7 @@ class CreateAcc(Screen):
 
     pass
 
+#Where the user logs in at.
 class Login(Screen):
     email = ObjectProperty(None)
     passw = ObjectProperty(None)
@@ -22,15 +25,24 @@ class Login(Screen):
 
     pass
 
+#Profile Page
 class Profile(Screen):
     pass
 
-
+#Manages all the windows
 class WindowManager(ScreenManager):
     pass
 
+#Global Variables to utilize
 kv = Builder.load_file("prog.kv")
+db = DataBase("users.txt")
+wm = WindowManager()
+screens = [CreateAcc(name="create"), Login(name="login"), Profile(name="profile")]
+#Generates Screens
+for screen in screens:
+    wm.add_widget(Screen)
 
+wm.current = "login"
 class ProgressionApp(App):
     def build(self):
         return kv

@@ -1,5 +1,6 @@
-#:kivy
+#:kivy 1.11
 <CreateAcc>:
+    name: "create"
     username:username
     email:email
     passw:passw
@@ -9,21 +10,24 @@
         cols:1
 
         FloatLayout:
+            Label:
+                text:"Username: "
             TextInput:
                 id:username
-                placeholder:
-                    text: "Username:"
+                text: "Username:"
+
+            Label:
+                text:"E-mail"
 
             TextInput:
                 id:email
-                placeholder:
-                    text: "E-mail:"
+                text: "E-mail:"
+            
+            Label:
+                text:"Password: "
             
             TextInput:
                 id:passw
-                placeholder:
-                    text: "Password:"
-
             Button:
                 id:loginf
                 text:"Already Have an Account?"
@@ -35,21 +39,20 @@
 
 
 <Login>:
-email:email
-passw:passw
-createf:createf
-login:login
+    name: "login"
+    email:email
+    passw:passw
+    createf:createf
+    login:login
     FloatLayout:
         cols:1
         FloatLayout:
             TextInput:
                 id:email
-                placeholder:
-                    text: "Email:"
+                text: "Email:"
             TextInput:
                 id:passw
-                placeholder:
-                    text:"Password:"
+                text:"Password:"
 
             Button:
                 id:createf
@@ -63,3 +66,4 @@ login:login
 
 
 <Profile>:
+    name: "profile"
